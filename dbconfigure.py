@@ -25,7 +25,7 @@ def configure():
     curr.execute("CREATE TABLE pmsecrets (masterpassword TEXT NOT NULL, device_secret TEXT NOT NULL);")
     print("TABLE 'pmsecrets' CREATED")
     
-    curr.execute("CREATE TABLE pmmain (websitename TEXT NOT NULL, websiteurl TEXT NOT NULL, username TEXT NOT NULL, password TEXT NOT NULL);")
+    curr.execute("CREATE TABLE pmmain (sitename TEXT NOT NULL, siteurl TEXT NOT NULL,email TEXT NOT NULL, username TEXT NOT NULL, password TEXT NOT NULL);")
     print("TABLE 'pmmain' CREATED")
     
     db.commit()

@@ -15,7 +15,7 @@ def getmasterkey(mp,ds):
     return key
 
 
-def addentry(mp,ds,websitename,websiteurl,username,):
+def addentry(mp,ds,sitename,siteurl,username,):
     password=getpass("Password:")
 
     mk=getmasterkey(mp,ds)
@@ -24,8 +24,8 @@ def addentry(mp,ds,websitename,websiteurl,username,):
     db=dbconfig()
     curr=db.cursor()
 
-    querry="INSERT INTO pmmain(websitename,websiteurl,username,password) VALUES (%s, %s, %s, %s, %s)"
-    val=(websitename,websiteurl,username,encrypted)
+    querry="INSERT INTO pmmain(sitename,siteurl,email,username,password) VALUES (%s, %s, %s, %s, %s)"
+    val=(sitename,siteurl,username,encrypted)
     curr.execute(querry, val)
     db.commit()
 
