@@ -15,20 +15,23 @@ def getmasterkey(mp,ds):
     return key
 
 
-def addentry(mp,ds,sitename,siteurl,username,):
+def addEntry(mp,ds,sitename,siteurl,email,username):
     password=getpass("Password:")
-
+        
     mk=getmasterkey(mp,ds)
+    
+    
     encrypted=aesutil.encrypt(key=mk,source=password,keyType="bytes")
+    
+    
 
     db=dbconfig()
     curr=db.cursor()
 
     querry="INSERT INTO pmmain(sitename,siteurl,email,username,password) VALUES (%s, %s, %s, %s, %s)"
-    val=(sitename,siteurl,username,encrypted)
+    val=(sitename,siteurl,email,username,encrypted)
     curr.execute(querry, val)
     db.commit()
 
     printc("[green] Added entry")
 
-    

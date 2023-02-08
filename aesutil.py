@@ -40,7 +40,7 @@ def encrypt(key, source, encode=True, keyType = 'hex'):
 		key = bytes(bytearray.fromhex(key))
 	else:
 		# use SHA-256 over our key to get a proper-sized AES key. Outputs in bytes 
-		key = key.encode()
+		#key = key.encode()
 		key = SHA256.new(key).digest()
 
 	IV = Random.new().read(AES.block_size)  # generate IV
@@ -72,7 +72,7 @@ def decrypt(key, source, decode=True,keyType="hex"):
 		key = bytes(bytearray.fromhex(key))
 	else:
 		# use SHA-256 over our key to get a proper-sized AES key
-		key = key.encode()
+		#key = key.encode()
 		key = SHA256.new(key).digest()  
 
 	IV = source[:AES.block_size]  # extract the IV from the beginning

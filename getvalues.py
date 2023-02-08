@@ -24,7 +24,7 @@ def retrieveEntries(mp, ds, search, decryptPassword=False):
     if len(search)==0:
         querry="SELECT * FROM pmmain"
     else:
-        querry="SELECT * FROM pmmain WHERE"
+        querry="SELECT * FROM pmmain WHERE "
         for i in search:
             querry+= f"{i} = '{search[i]}' AND "
         querry = querry[: -5]
