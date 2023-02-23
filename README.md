@@ -20,5 +20,4 @@ Then go to the bin folder and run dbconfigure.exe and follow the instruction to 
 ## Demo
 
 
-
-https://i.imgur.com/NIFqewx.gif
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
